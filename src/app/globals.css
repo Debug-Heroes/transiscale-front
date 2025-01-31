@@ -3,17 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #121212;
+  --background: #FFFFFF;
+  --primary: #4A90E2;
+  --secondary: #50E3C2;
+  --accent: #FF6F61;
+  --text-main: #333333;
+  --text-secondary: #666666;
+  --border: #E0E0E0;
+
+  /* Cores específicas para fontes */
+  --link: var(--primary);
+  --link-hover: #357ABD;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #030303;
+    --background: #1E1E1E;
+    --primary: #6BB9F0;
+    --secondary: #7FFFD4;
+    --accent: #FF8C82;
+    --text-main: #E0E0E0;
+    --text-secondary: #A0A0A0;
+    --border: #444444;
+
+
+    --link: var(--primary);
+    --link-hover: #4A90E2;
   }
 }
 
 body {
   font-family: Roboto, sans-serif;
+  color: var(--text-main);
+  
+}
+
+input{
+  outline: none;
 }
