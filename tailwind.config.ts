@@ -11,6 +11,17 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "blue-classic": "#2E86AB",
+        "--primary": "var(--primary)",
+        "--secondary": "var(--secondary)",
+        "--accent": "var(--accent)",
+        "--text-main": "var(--text-main)",
+        "--text-secondary": "var(--text-secondary)",
+        "--border": "var(--border)",
+    
+        /* Cores para fontes no Dark Mode */
+        "--link": "var(--primary)",
+        "--link-hover": "var(--link-hover)",
       },
     },
   },
