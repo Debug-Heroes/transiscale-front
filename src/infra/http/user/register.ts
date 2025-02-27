@@ -1,4 +1,4 @@
-import { api } from "@/lib/axios.external"
+import { api } from "@lib/axios"
 
 
 interface RegisterRequest {

@@ -4,6 +4,10 @@ export default function ProtectedLayout({
   children: React.ReactNode
 }) {
   return (
-    <main>{children}</main>
+
+    <div>
+      {children}
+    </div>
+
   )
 }

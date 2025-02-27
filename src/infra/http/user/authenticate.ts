@@ -1,4 +1,4 @@
-import { api } from "@/lib/axios.external"
+import { api } from "@lib/axios"
 
 
 interface AuthenticateRequest {
@@ -17,5 +17,5 @@ export async function authenticate(data: AuthenticateRequest){
     password, 
   })
 
-  return response.data
+  return response
 }

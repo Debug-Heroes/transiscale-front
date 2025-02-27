@@ -12,14 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "blue-classic": "#2E86AB",
-        "--primary": "var(--primary)",
+        "--primary": 'rgb(from var(--primary) r g b / <alpha-value>)',
         "--secondary": "var(--secondary)",
         "--accent": "var(--accent)",
         "--text-main": "var(--text-main)",
         "--text-secondary": "var(--text-secondary)",
         "--border": "var(--border)",
     
-        /* Cores para fontes no Dark Mode */
+       
         "--link": "var(--primary)",
         "--link-hover": "var(--link-hover)",
       },
