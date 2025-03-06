@@ -21,7 +21,10 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Transiscale",
+  title: {
+    template: '%s | Transiscale',
+    default: 'Transiscale'
+  },
   description: "Transiscale description",
 };
 

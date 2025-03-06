@@ -12,7 +12,7 @@ export default function SignInView(methods: SignInView) {
   return (
     <section className="flex p-1 md:p-0 justify-center items-center md:grid md:items-stretch md:grid-cols-2 h-screen w-full">
       <div className="flex justify-center items-center w-full">
-        <form onSubmit={handleSubmit(handleSubmitFromLogin)} className="flex flex-col shadow-md gap-3 bg-background py-8 px-8 w-full  max-w-96 rounded-md">
+        <form onSubmit={handleSubmit(handleSubmitFromLogin)} className="flex flex-col shadow-md gap-3 bg-foreground py-8 px-8 w-full  max-w-96 rounded-md">
           <h2 className="text-2xl font-extrabold">Acesse sua conta</h2>
           <label className="-mb-2" htmlFor="email">E-mail</label>
           <Input
@@ -29,7 +29,7 @@ export default function SignInView(methods: SignInView) {
             id="password"
             type="password"
             placeholder="Password"
-            error={!!errors?.email?.message}
+            error={!!errors?.password?.message}
           />
           <Error>{errors.password?.message}</Error>
           <span className="text-xs my-3">Não tem uma conta? <Link className="-text--primary" href={'/sign-up'}>Crie uma!</Link></span>

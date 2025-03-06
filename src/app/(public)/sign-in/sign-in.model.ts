@@ -11,7 +11,7 @@ export function useSignInModel(){
   const router = useRouter();
   const { handleSubmit, register, control, formState: {
     errors,
-    isSubmitting
+    isSubmitting,
   } } = useForm<UsersSignInSchemaForm>({
     resolver: zodResolver(UsersSignInSchema),
     defaultValues: {
@@ -19,7 +19,7 @@ export function useSignInModel(){
       email: ''
     }
   })
-  console.log('dwadawdwa')
+
 
   async function handleSubmitFromLogin(data: UsersSignInSchemaForm) {
     const { email, password} = data
@@ -30,24 +30,26 @@ export function useSignInModel(){
       redirect: false,
       callbackUrl: '/',
     })
-    console.log(response)
+  
     if(response.ok){
-      toast.success("Aguarde! Vcoê será redirecioando")
       router.replace('/')
+      toast.success("Aguarde! Você está sendo redirecionado...")
     }
 
     if(response.status === 401){
-      return toast.error("Usuário ou senha incorreto.")
+      throw new Error('Usuário ou senha incorretos.')
     }
 
     if(response.error){
-      return toast.error("Aguarde! Vcoê será redirecioando")
+      throw new Error('Erro no servidor. Tente novamente mais tarde.')
     }
 
    
    }catch(error){
-    console.log('error')
-    toast.error("Erro de autenticação")
+    if(error instanceof Error){
+      toast.error(error.message)
+    }
+   
    }
   }
 

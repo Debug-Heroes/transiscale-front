@@ -1,16 +1,9 @@
-'use client'
+import { Metadata } from "next"
+import SignInPage from "./sign-in.page"
 
-import { useSignInModel } from "./sign-in.model"
-import SignInView from "./sign-in.view"
-
-
-
+export const metadata: Metadata = {
+  title: 'Sign-in'
+}
 export default function SignIn() {
-  const methods = useSignInModel()
-  return (
-    <>
-      <title>Sign in</title>
-      <SignInView {...methods} />
-    </>
-  )
+  return <SignInPage />
 }

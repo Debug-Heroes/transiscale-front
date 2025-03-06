@@ -13,7 +13,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const {  email, password} = credentials
-        console.log(email, password)
+    
         const res = await authenticate({email, password})
         const user =  res.data as any
 
