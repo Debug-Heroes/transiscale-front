@@ -19,7 +19,7 @@ export function useSignInModel(){
       email: ''
     }
   })
-  console.log('dwadawdwa')
+
 
   async function handleSubmitFromLogin(data: UsersSignInSchemaForm) {
     const { email, password} = data
@@ -30,14 +30,14 @@ export function useSignInModel(){
       redirect: false,
       callbackUrl: '/',
     })
-    console.log(response)
+  
     if(response.ok){
       router.replace('/')
-      toast.success("Aguarde! Vcoê será redirecioando")
+      toast.success("Aguarde! Você está sendo redirecionado...")
     }
 
     if(response.status === 401){
-      throw new Error('Usuário ou senha incorreto.')
+      throw new Error('Usuário ou senha incorretos.')
     }
 
     if(response.error){
