@@ -34,6 +34,28 @@
   }
 }
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: var(--background);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 100vh;
+    border: 3px solid var(--foreground);
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--link-hover);
+  }
+}
+
 body {
   font-family: Roboto, sans-serif;
   background-color: var(--background);

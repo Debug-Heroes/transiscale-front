@@ -1,7 +1,7 @@
 import { api } from "@lib/axios"
 
 
-interface RegisterRequest {
+interface RegisterCompaniesRequest {
   name: string
   email: string
   address?: string
@@ -10,17 +10,17 @@ interface RegisterRequest {
   confirmPassword: string
 }
 
-interface RegisterResponse {
+interface RegisterCompaniesResponse {
   id: string
   name: string
   address: string
   contact_number?: string
 
 }
-export async function register(data: RegisterRequest){
+export async function registerCompanies(data: RegisterCompaniesRequest){
   const { name, email, address, contact_number, password, confirmPassword} = data
   const contact = contact_number.replace(/[()\-\s]/g, '') 
-  const response = await api.post<RegisterResponse>('/signup', { 
+  const response = await api.post<RegisterCompaniesResponse>('/signup', { 
     name, 
     email, 
     address, 

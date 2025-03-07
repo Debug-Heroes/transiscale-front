@@ -7,7 +7,7 @@ interface InputProps extends ComponentProps<'input'> {
 const Input = forwardRef<HTMLInputElement, InputProps>(({ error, ...props }, ref) => {
   return (
     <input
-      className={twMerge("border -border--border bg-background p-2 rounded-sm",
+      className={twMerge("border w-full -border--border bg-background p-2 rounded-sm",
         error && 'border-red-400')}
       ref={ref}
       {...props}
